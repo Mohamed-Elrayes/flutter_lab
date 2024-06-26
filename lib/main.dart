@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lab/core/home/presentation/home_page.dart';
+import 'package:flutter_lab/experiments/multiple-page-form/multiple_page_form_screen.dart';
 import 'package:flutter_lab/experiments/scroll-physics/pages/always_scrollable_scroll_physics_ex.dart';
 import 'package:flutter_lab/experiments/scroll-physics/scroll_physics_screen.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         ScrollPhysicsScreen.routeName: (context) => const ScrollPhysicsScreen(),
         AlwaysScrollableScrollPhysicsEx.routeName: (context) =>
             const AlwaysScrollableScrollPhysicsEx(),
+        MultiplePageFormScreen.routeName: (context) => const MultiplePageFormScreen(),
       },
       home: const HomePage(),
     );
