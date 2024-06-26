@@ -1,0 +1,30 @@
+name: hello world
+on: [push]
+jobs:
+  job1:
+    name: run on ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    - name: print date from ubuntu
+      run: date 
+    
+  job2:
+    name: run on Mac
+    runs-on: macos-latest
+    steps:
+    - name: print date from Mac
+      run: date
+
+  job3:
+    name: run on Windows
+    runs-on: windows-latest
+    steps:
+    - name: print date for Windows
+      run: date
+
+  job4:
+    name: depend on job 1 , 2 and 3
+    runs-on: ubuntu-latest
+    needs: [job1,job2,job3]
+    steps:
+    - run: echo "Hello World" 
