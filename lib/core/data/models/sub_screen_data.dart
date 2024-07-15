@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 
 @immutable
-class ScrollPhysicsData {
-  const ScrollPhysicsData({
+class SubScreenData {
+  const SubScreenData({
     required this.title,
     required this.pageRoute,
   });
