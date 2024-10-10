@@ -11,7 +11,7 @@ class ExperimentListItem extends StatelessWidget {
     return InkWell(
       onTap: experiment.tutorialPageRoute == null
           ? null
-          : () => Navigator.of(context).pushNamed(experiment.tutorialPageRoute!),
+          : () => Navigator.of(context).restorablePushNamed(experiment.tutorialPageRoute!),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 15),
         decoration: BoxDecoration(

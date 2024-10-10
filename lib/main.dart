@@ -5,6 +5,7 @@ import 'package:flutter_lab/experiments/animations/main_animations_screen.dart';
 import 'package:flutter_lab/experiments/multiple-page-form/multiple_page_form_screen.dart';
 import 'package:flutter_lab/experiments/scroll-physics/pages/always_scrollable_scroll_physics_ex.dart';
 import 'package:flutter_lab/experiments/scroll-physics/scroll_physics_screen.dart';
+import 'package:flutter_lab/experiments/state_restoration/state_restoration_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      restorationScopeId: 'root',
       title: 'Flutter Experiments',
       themeMode: ThemeMode.dark,
       theme: ThemeData.dark(),
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
         MultiplePageFormScreen.routeName: (context) => const MultiplePageFormScreen(),
         MainAnimationScreen.routeName: (context) => const MainAnimationScreen(),
         ImplicitAnimationScreen.routeName: (context) => const ImplicitAnimationScreen(),
+        StateRestorationScreen.routeName: (context) => const StateRestorationScreen(),
       },
       home: const HomePage(),
     );
