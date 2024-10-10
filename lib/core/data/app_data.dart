@@ -5,6 +5,7 @@ import 'package:flutter_lab/experiments/animations/main_animations_screen.dart';
 import 'package:flutter_lab/experiments/multiple-page-form/multiple_page_form_screen.dart';
 import 'package:flutter_lab/experiments/scroll-physics/pages/always_scrollable_scroll_physics_ex.dart';
 import 'package:flutter_lab/experiments/scroll-physics/scroll_physics_screen.dart';
+import 'package:flutter_lab/experiments/state_restoration/state_restoration_screen.dart';
 
 class AppData {
   static List<Experiment> appExperiments = [
@@ -22,6 +23,11 @@ class AppData {
       title: 'Animation Types With Examples',
       description: 'See all types of Animation with example usages and code',
       tutorialPageRoute: MainAnimationScreen.routeName,
+    ),
+    const Experiment(
+      title: 'State Restoration Examples',
+      description: 'See all types of State Restoration with example usages and code',
+      tutorialPageRoute: StateRestorationScreen.routeName,
     ),
   ];
 
