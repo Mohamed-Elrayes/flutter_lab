@@ -2,7 +2,9 @@ import 'package:flutter_lab/core/data/experiment.dart';
 import 'package:flutter_lab/experiments/animations/pages/implicit_animation_screen.dart';
 import 'package:flutter_lab/experiments/animations/main_animations_screen.dart';
 import 'package:flutter_lab/experiments/forms/main_forms_screen.dart';
-import 'package:flutter_lab/experiments/forms/pages/multiple_page_form_screen.dart';
+import 'package:flutter_lab/experiments/forms/pages/long_forms_screen.dart';
+import 'package:flutter_lab/experiments/navigation/main_navigation_screen.dart';
+import 'package:flutter_lab/experiments/navigation/pages/navigator_multiple_page_screen.dart';
 import 'package:flutter_lab/experiments/scroll-physics/pages/always_scrollable_scroll_physics_ex.dart';
 import 'package:flutter_lab/experiments/scroll-physics/main_scroll_physics_screen.dart';
 import 'package:flutter_lab/experiments/state/main_state_screen.dart';
@@ -12,6 +14,7 @@ class AppLab {
   static List<Experiment> appExperiments = [
     scrollPhysicsExperiment,
     formExperiment,
+    navigationExperiment,
     animationTypesWithExperiment,
     stateRestorationExperiment,
   ];
@@ -52,18 +55,18 @@ class AppLab {
     );
   }
 
-  static Experiment get formExperiment {
+  static Experiment get navigationExperiment {
     return Experiment(
-      title: 'Forms Experiment',
+      title: 'Navigation Experiment',
       route: {
-        'MainFormsScreen': (context) => const MainFormsScreen(),
+        'MainNavigationScreen': (context) => const MainNavigationScreen(),
       },
       subScreen: [
         Experiment(
-          title: 'Multiple Form using Navigator',
+          title: 'Multiple Page Form using Navigator',
           description: 'Split your forms in multiple page for a better user experience',
           route: {
-            'MultiplePageFormScreen': (context) => const MultiplePageFormScreen(),
+            'NavigatorMultiplePageScreen': (context) => const NavigatorMultiplePageScreen(),
           },
         )
       ],
@@ -84,6 +87,24 @@ class AppLab {
           },
           description: 'See all types of ScrollPhysics with example usages and code',
         ),
+      ],
+    );
+  }
+
+  static Experiment get formExperiment {
+    return Experiment(
+      title: 'Forms Experiment',
+      route: {
+        'forms': (context) => const MainFormsScreen(),
+      },
+      subScreen: [
+        Experiment(
+          title: 'Long Form',
+          description: 'Long forms use [focusNode & Forms & Custom Form] for user experience',
+          route: {
+            'multiplePageForm': (context) => const LongFormsScreen(),
+          },
+        )
       ],
     );
   }
