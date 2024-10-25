@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 class AlwaysScrollableScrollPhysicsEx extends StatelessWidget {
   const AlwaysScrollableScrollPhysicsEx({super.key});
 
-  static const String routeName = 'always-scrollable-scroll-physics-ex';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

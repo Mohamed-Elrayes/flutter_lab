@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lab/core/data/app_data.dart';
-import 'package:flutter_lab/core/home/componnents/tutorial_list_item.dart';
+import 'package:flutter_lab/core/common/main_item_structure.dart';
+import 'package:flutter_lab/app_lab.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,8 +12,12 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: List.generate(
-            AppData.appExperiments.length,
-            (i) => ExperimentListItem(AppData.appExperiments[i]),
+            AppLab.appExperiments.length,
+            (i) => MainItemStructure(
+              title: AppLab.appExperiments[i].title,
+              routeName: AppLab.appExperiments[i].route.entries.first.key,
+              description: AppLab.appExperiments[i].description,
+            ),
           ),
         ),
       ),

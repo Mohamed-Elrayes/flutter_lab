@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 class MultiplePageFormScreen extends StatelessWidget {
   const MultiplePageFormScreen({super.key});
 
-  static const String routeName = 'MultiplePageFormScreen';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

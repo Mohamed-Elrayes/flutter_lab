@@ -44,14 +44,12 @@ import 'package:flutter/material.dart';
 /// 4- The RestorableProperty (the "data") is ChangeNotifier
 ///
 ///
-/// Note: If you have a RootRestorationScope upstream, you MUST mention a restorationScopeId at the level of your MateriaApp/CupertinoApp, because, as mentioned earlier, an absence of an identity disables the State Restoration for the entire subtree!!!
+/// Note: If you have a RootRestorationScope upstream, you MUST mention a restorationScopeId at the level of your MateriaApp/CupelationApp, because, as mentioned earlier, an absence of an identity disables the State Restoration for the entire subtree!!!
 /// Resource:
 /// https://www.flutteris.com/blog/en/state_restoration
 ///
 class StateRestorationScreen extends StatefulWidget {
   const StateRestorationScreen({super.key});
-
-  static const String routeName = 'State-Restoration-Screen';
 
   @override
   State<StateRestorationScreen> createState() => _StateRestorationScreenState();
@@ -74,7 +72,7 @@ class _StateRestorationScreenState extends State<StateRestorationScreen> with Re
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      restorationId: StateRestorationScreen.routeName,
+      restorationId: 'home_page',
       appBar: AppBar(
         title: Text(
           'State Restoration Types Examples',

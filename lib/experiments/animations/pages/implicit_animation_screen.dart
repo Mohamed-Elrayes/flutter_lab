@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 class ImplicitAnimationScreen extends StatelessWidget {
   const ImplicitAnimationScreen({super.key});
 
-  static const String routeName = 'ImplicitAnimationScreen';
-
   @override
   Widget build(BuildContext context) {
     double listContainerHeight = MediaQuery.of(context).size.height - 170;
@@ -466,6 +464,12 @@ class PageWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.transparent,
+      appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
+      ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(

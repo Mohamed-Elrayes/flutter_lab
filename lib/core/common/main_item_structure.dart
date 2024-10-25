@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lab/core/data/experiment.dart';
 
-class ExperimentListItem extends StatelessWidget {
-  final Experiment experiment;
+class MainItemStructure extends StatelessWidget {
+  const MainItemStructure({
+    super.key,
+    required this.routeName,
+    required this.title,
+    this.description,
+  });
 
-  const ExperimentListItem(this.experiment, {super.key});
+  final String routeName;
+  final String title;
+  final String? description;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: experiment.tutorialPageRoute == null
-          ? null
-          : () => Navigator.of(context).restorablePushNamed(experiment.tutorialPageRoute!),
+      onTap: () => Navigator.of(context).restorablePushNamed(routeName),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 15),
         decoration: BoxDecoration(
           border: Border(
-            bottom: BorderSide(width: 1, color: Colors.black.withOpacity(0.2)),
+            bottom: BorderSide(width: 1, color: Colors.white.withOpacity(0.2)),
           ),
         ),
         child: Row(
@@ -25,9 +29,9 @@ class ExperimentListItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(experiment.title, style: Theme.of(context).textTheme.titleLarge),
+                  Text(title, style: Theme.of(context).textTheme.titleLarge),
                   const SizedBox(height: 10),
-                  Text(experiment.description),
+                  if (description case final description?) Text(description),
                 ],
               ),
             ),
