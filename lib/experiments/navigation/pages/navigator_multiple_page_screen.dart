@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MultiplePageFormScreen extends StatelessWidget {
-  const MultiplePageFormScreen({super.key});
+class NavigatorMultiplePageScreen extends StatelessWidget {
+  const NavigatorMultiplePageScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
