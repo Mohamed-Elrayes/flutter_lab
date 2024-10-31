@@ -2,7 +2,7 @@ import 'package:flutter_lab/core/data/experiment.dart';
 import 'package:flutter_lab/experiments/animations/pages/implicit_animation_screen.dart';
 import 'package:flutter_lab/experiments/animations/main_animations_screen.dart';
 import 'package:flutter_lab/experiments/forms/main_forms_screen.dart';
-import 'package:flutter_lab/experiments/forms/pages/long_forms_screen.dart';
+import 'package:flutter_lab/experiments/forms/pages/focus_forms_screen.dart';
 import 'package:flutter_lab/experiments/navigation/main_navigation_screen.dart';
 import 'package:flutter_lab/experiments/navigation/pages/navigator_multiple_page_screen.dart';
 import 'package:flutter_lab/experiments/scroll-physics/pages/always_scrollable_scroll_physics_ex.dart';
@@ -99,10 +99,10 @@ class AppLab {
       },
       subScreen: [
         Experiment(
-          title: 'Long Form',
-          description: 'Long forms use [focusNode & Forms & Custom Form] for user experience',
+          title: 'Focus Form',
+          description: 'Focus forms use [Focus , FocusScope , FocusNode ] for user experience',
           route: {
-            'multiplePageForm': (context) => const LongFormsScreen(),
+            'focus_forms': (context) => const FocusFormsScreen(),
           },
         )
       ],
