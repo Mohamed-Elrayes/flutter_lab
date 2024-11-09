@@ -1,6 +1,10 @@
+import 'package:flutter_lab/challenge/main_challenge_screen.dart';
+import 'package:flutter_lab/challenge/pages/ticket_booking_screen.dart';
 import 'package:flutter_lab/core/data/experiment.dart';
 import 'package:flutter_lab/experiments/animations/pages/implicit_animation_screen.dart';
 import 'package:flutter_lab/experiments/animations/main_animations_screen.dart';
+import 'package:flutter_lab/experiments/custom_paint/main_custom_paint_screen.dart';
+import 'package:flutter_lab/experiments/custom_paint/pages/custom_paint_screen.dart';
 import 'package:flutter_lab/experiments/forms/main_forms_screen.dart';
 import 'package:flutter_lab/experiments/forms/pages/focus_forms_screen.dart';
 import 'package:flutter_lab/experiments/navigation/main_navigation_screen.dart';
@@ -17,6 +21,8 @@ class AppLab {
     navigationExperiment,
     animationTypesWithExperiment,
     stateRestorationExperiment,
+    customPainterExperiment,
+    challengeExperiment,
   ];
 
   static Experiment get stateRestorationExperiment {
@@ -105,6 +111,43 @@ class AppLab {
             'focus_forms': (context) => const FocusFormsScreen(),
           },
         )
+      ],
+    );
+  }
+
+  static Experiment get customPainterExperiment {
+    return Experiment(
+      title: 'Custom Painter Experiment',
+      route: {
+        'main_custom_painter_screen': (context) => const MainCustomPainterScreen(),
+      },
+      description: 'A collection of Custom Painter examples to test your skills',
+      subScreen: [
+        Experiment(
+          title: 'Custom Paint',
+          route: {
+            'custom_paint_screen': (context) => const CustomPaintScreen(),
+          },
+        ),
+      ],
+    );
+  }
+
+  static Experiment get challengeExperiment {
+    return Experiment(
+      title: 'Challenge Experiment UI Design',
+      route: {
+        'main_challenge_screen': (context) => const MainChallengeScreen(),
+      },
+      description: 'A collection of UI design challenges to test your skills',
+      subScreen: [
+        Experiment(
+          title: 'Ticket Booking',
+          route: {
+            'ticket_booking_screen': (context) => const TicketBookingScreen(),
+          },
+          description: 'A ticket booking UI design challenge',
+        ),
       ],
     );
   }
